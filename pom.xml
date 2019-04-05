@@ -15,11 +15,18 @@
     </parent>
 
     <properties>
+        <!-- dependency versions -->
         <guava.version>27.1-jre</guava.version>
         <junit-5.version>5.4.1</junit-5.version>
         <java-reddit.version>1.1.0</java-reddit.version>
         <telegram-bot.version>4.1.2</telegram-bot.version>
         <mockito.version>1.10.19</mockito.version>
+        <!-- maven stuff -->
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
