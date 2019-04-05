@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class Reddit implements RedditSource {
+public class RedditService implements RedditSource {
 
     @Value("${redditUser}")
     private String name;
@@ -25,7 +25,7 @@ public class Reddit implements RedditSource {
     private String secret;
     private RedditClient redditClient;
 
-    public Reddit(String botUserName){
+    public RedditService(String botUserName){
         var credentials = Credentials.script(name, pass , clientID, secret);
         var userAgent = new UserAgent("bot", "com.github.lotusmeanseight", "v0.1", botUserName);
         var adapter = new OkHttpNetworkAdapter(userAgent);
