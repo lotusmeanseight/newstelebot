@@ -14,4 +14,8 @@ public interface RedditSource extends NewsSource {
 
     List<NewsEntry> getRisingEntriesByCategory(int numberOfEntries, String category);
 
+    List<NewsEntry> getHotEntries(int numberOfEntries);
+
+    List<NewsEntry> getHotEntriesByCategory(int numberOfEntries, String category);
+
 }
