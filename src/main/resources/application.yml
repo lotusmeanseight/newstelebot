@@ -1,0 +1,7 @@
+auth:
+  reddit:
+    username: ${redditUser:?redditUser env variable not set}
+    password: ${redditPW:?redditPW env variable not set}
+    client:
+      id: ${redditClientID:?redditID env variable not set}
+      secret: ${redditSecret:?redditSecret env variable not set}

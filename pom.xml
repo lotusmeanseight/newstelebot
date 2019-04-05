@@ -8,6 +8,12 @@
     <artifactId>newsbot-tele</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.4.RELEASE</version>
+    </parent>
+
     <properties>
         <guava.version>27.1-jre</guava.version>
         <junit-5.version>5.4.1</junit-5.version>
@@ -16,6 +22,11 @@
     </properties>
 
     <dependencies>
+        <!-- Spring Dependencies (version resolves to the spring-boot-parent release above -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <!-- Application Dependencies -->
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -59,4 +70,12 @@
         </repository>
     </repositories>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
