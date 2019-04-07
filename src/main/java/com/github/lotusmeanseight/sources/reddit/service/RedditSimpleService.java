@@ -1,4 +1,4 @@
-package com.github.lotusmeanseight.sources.impl.reddit;
+package com.github.lotusmeanseight.sources.reddit.service;
 
 import com.github.lotusmeanseight.entry.NewsEntry;
 import com.github.lotusmeanseight.entry.impl.SimpleEntry;
@@ -21,43 +21,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class RedditService implements RedditSource {
-
-    @Value("${redditUser}")
-    private String name;
-    @Value("${redditPW}")
-    private String pass;
-    @Value("${redditID}")
-    private String clientID;
-    @Value("${redditSecret}")
-    private String secret;
-    private RedditClient redditClient;
-
-    public RedditService(String botUserName){
-        var credentials = Credentials.script(name, pass , clientID, secret);
-        var userAgent = new UserAgent("bot", "com.github.lotusmeanseight", "v0.1", botUserName);
-        var adapter = new OkHttpNetworkAdapter(userAgent);
-        redditClient = OAuthHelper.automatic(adapter, credentials);
-    }
+public class RedditSimpleService implements RedditSource {
 
 
-    @Override
-    public List<NewsEntry> getControversialEntries(int numberOfEntries) {
-        DefaultPaginator<Submission> frontPage = redditClient.frontPage()
-                .sorting(SubredditSort.CONTROVERSIAL)
-                .limit(numberOfEntries)
-                .build();
-        Listing<Submission> submissions = frontPage.next();
-        List<NewsEntry> newsEntries = new ArrayList<>();
-        for(Submission s : submissions){
+/*
+    private List<NewsEntry> iterateSubmissions(Listing<Submission> submissions){
+        List<NewsEntry> entries = new ArrayList<>();
+        for (Submission s : submissions) {
             try {
-                SimpleEntry entry = new SimpleEntry(s.getTitle(), new URL(s.getUrl()));
-                newsEntries.add(entry);
+                NewsEntry entry = new SimpleEntry((s.getTitle()), new URL(s.getUrl()));
+                entries.add(entry);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
         }
-        return newsEntries;
+        return entries;
+    }
+*/
+
+
+    @Override
+    public List<NewsEntry> getControversialEntries(int numberOfEntries) {
+/*        DefaultPaginator<Submission> frontPage = redditClient.frontPage()
+                .sorting(SubredditSort.CONTROVERSIAL)
+                .limit(numberOfEntries)
+                .build();
+        Listing<Submission> submissions = frontPage.next();
+        return iterateSubmissions(submissions);*/
+        return null;
     }
 
     @Override

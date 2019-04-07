@@ -1,5 +1,6 @@
 auth:
   reddit:
+    bot:
     username: ${redditUser:?redditUser env variable not set}
     password: ${redditPW:?redditPW env variable not set}
     client:
