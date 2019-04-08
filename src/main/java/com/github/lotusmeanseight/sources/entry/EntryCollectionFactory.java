@@ -1,6 +1,5 @@
 package com.github.lotusmeanseight.sources.entry;
 
-import com.github.lotusmeanseight.entry.NewsEntry;
 import com.github.lotusmeanseight.entry.impl.SimpleEntry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
