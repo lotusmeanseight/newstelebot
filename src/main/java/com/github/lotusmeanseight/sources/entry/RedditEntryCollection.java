@@ -1,7 +1,6 @@
 package com.github.lotusmeanseight.sources.entry;
 
 import com.github.lotusmeanseight.entry.NewsEntry;
-import com.github.lotusmeanseight.sources.entry.EntryCollection;
 import net.dean.jraw.RedditClient;
 import net.dean.jraw.http.OkHttpNetworkAdapter;
 import net.dean.jraw.http.UserAgent;
@@ -44,27 +43,27 @@ public class RedditEntryCollection<T extends NewsEntry> extends EntryCollection<
     }
 
     @Override
-    List<T> getEntries(String sortingMethod) {
+    public List<T> getEntries(String sortingMethod) {
         return null;
     }
 
     @Override
-    List<T> getEntriesByCategory(String sortingMethod, String category) {
+    public List<T> getEntriesByCategory(String sortingMethod, String category) {
         return null;
     }
 
     @Override
-    List<T> getEntriesByCategoryBeforeDate(String sortingMethod, String category, LocalDate before) {
+    public List<T> getEntriesByCategoryBeforeDate(String sortingMethod, String category, LocalDate before) {
         return null;
     }
 
     @Override
-    List<T> getEntriesByCategoryAfterDate(String sortingMethod, String category, LocalDate after) {
+    public List<T> getEntriesByCategoryAfterDate(String sortingMethod, String category, LocalDate after) {
         return null;
     }
 
     @Override
-    List<T> getEntriesByCategoryBetweenDates(String sortingMethod, String category, LocalDate start, LocalDate end) {
+    public List<T> getEntriesByCategoryBetweenDates(String sortingMethod, String category, LocalDate start, LocalDate end) {
         return null;
     }
 }

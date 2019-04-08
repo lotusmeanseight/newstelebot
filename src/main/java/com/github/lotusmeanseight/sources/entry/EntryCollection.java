@@ -1,7 +1,6 @@
 package com.github.lotusmeanseight.sources.entry;
 
 import com.github.lotusmeanseight.entry.NewsEntry;
-import net.dean.jraw.models.Submission;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -11,7 +10,7 @@ public abstract class EntryCollection<T extends NewsEntry> {
     private int limit;
     private LocalDate startDate;
     private LocalDate endDate;
-    private String sortingMethod;
+
 
     protected EntryCollection(){
 
@@ -49,11 +48,4 @@ public abstract class EntryCollection<T extends NewsEntry> {
         this.endDate = endDate;
     }
 
-    public String getSortingMethod() {
-        return sortingMethod;
-    }
-
-    public void setSortingMethod(String sortingMethod) {
-        this.sortingMethod = sortingMethod;
-    }
 }
