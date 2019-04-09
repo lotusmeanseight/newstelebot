@@ -19,7 +19,7 @@
         <guava.version>27.1-jre</guava.version>
         <junit-5.version>5.4.1</junit-5.version>
         <java-reddit.version>1.1.0</java-reddit.version>
-        <telegram-bot.version>4.1.2</telegram-bot.version>
+        <kutils.version>0.9.17</kutils.version>
         <mockito.version>1.10.19</mockito.version>
         <!-- maven stuff -->
         <java.version>11</java.version>
@@ -46,6 +46,12 @@
             <groupId>net.dean.jraw</groupId>
             <artifactId>JRAW</artifactId>
             <version>${java-reddit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gitlab.aberrantfox</groupId>
+            <artifactId>Kutils</artifactId>
+            <version>${kutils.version}</version>
         </dependency>
 
         <!-- Test Dependencies -->
@@ -76,6 +82,12 @@
             <id>spring-repo</id>
             <name>Spring Repository</name>
             <url>http://repo.spring.io/libs-release/</url>
+        </repository>
+
+        <repository>
+            <id>jitpack.io</id>
+            <name>Open Source Repository for dependencies</name>
+            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
