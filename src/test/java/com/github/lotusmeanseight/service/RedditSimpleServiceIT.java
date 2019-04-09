@@ -2,7 +2,7 @@ package com.github.lotusmeanseight.service;
 
 import org.junit.jupiter.api.Test;
 
-public class RedditSimpleServiceTest {
+public class RedditSimpleServiceIT {
 
     @Test
     public void testControversialEntries(){
