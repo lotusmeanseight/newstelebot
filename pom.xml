@@ -48,12 +48,6 @@
             <version>${java-reddit.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.telegram</groupId>
-            <artifactId>telegrambots</artifactId>
-            <version>${telegram-bot.version}</version>
-        </dependency>
-
         <!-- Test Dependencies -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
