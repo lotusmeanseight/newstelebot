@@ -1,15 +1,16 @@
-package com.github.lotusmeanseight.sources.entry;
+package com.github.lotusmeanseight.source.entrycollection;
 
 import com.github.lotusmeanseight.entry.NewsEntry;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public abstract class EntryCollection {
+public abstract class EntryCollection<T> {
 
     private int limit;
     private LocalDate startDate;
     private LocalDate endDate;
+
 
 
     protected EntryCollection(){
@@ -18,10 +19,6 @@ public abstract class EntryCollection {
 
     public abstract List<NewsEntry> getEntries(String sortingMethod);
     public abstract List<NewsEntry> getEntriesByCategory(String sortingMethod, String category);
-    public abstract List<NewsEntry> getEntriesByCategoryBeforeDate(String sortingMethod, String category, LocalDate before);
-    public abstract List<NewsEntry> getEntriesByCategoryAfterDate(String sortingMethod, String category, LocalDate after);
-    public abstract List<NewsEntry> getEntriesByCategoryBetweenDates(String sortingMethod, String category,
-                                                      LocalDate start, LocalDate end);
 
     public int getLimit() {
         return limit;

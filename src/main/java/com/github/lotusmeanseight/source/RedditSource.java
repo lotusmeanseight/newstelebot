@@ -1,4 +1,4 @@
-package com.github.lotusmeanseight.sources;
+package com.github.lotusmeanseight.source;
 
 import com.github.lotusmeanseight.entry.NewsEntry;
 

@@ -1,6 +1,6 @@
-package com.github.lotusmeanseight.sources.entry;
+package com.github.lotusmeanseight.source.entrycollection;
 
-import com.github.lotusmeanseight.entry.impl.SimpleEntry;
+import com.github.lotusmeanseight.source.entrycollection.reddit.RedditSimpleEntryCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class EntryCollectionFactory {
 
     @Autowired
-    private RedditEntryCollection<SimpleEntry> redditSimpleEntryCollection;
+    private RedditSimpleEntryCollection redditSimpleEntryCollection;
 
     public EntryCollection getEntryCollection(String source, String entryType){
         if(source.toLowerCase().equals("reddit")){
@@ -16,7 +16,6 @@ public class EntryCollectionFactory {
                 return redditSimpleEntryCollection;
             }
         }
-
         return null;
     }
 

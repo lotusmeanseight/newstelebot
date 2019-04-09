@@ -1,9 +1,9 @@
-package com.github.lotusmeanseight.sources.reddit.service;
+package com.github.lotusmeanseight.source.service.reddit;
 
 import com.github.lotusmeanseight.entry.NewsEntry;
-import com.github.lotusmeanseight.sources.RedditSource;
-import com.github.lotusmeanseight.sources.entry.EntryCollectionFactory;
-import com.github.lotusmeanseight.sources.entry.RedditEntryCollection;
+import com.github.lotusmeanseight.source.RedditSource;
+import com.github.lotusmeanseight.source.entrycollection.EntryCollectionFactory;
+import com.github.lotusmeanseight.source.entrycollection.reddit.RedditEntryCollection;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,84 +13,68 @@ public class RedditSimpleService implements RedditSource {
 
     private RedditEntryCollection collection;
 
-/*
-    private List<NewsEntry> iterateSubmissions(Listing<Submission> submissions){
-        List<NewsEntry> entries = new ArrayList<>();
-        for (Submission s : submissions) {
-            try {
-                NewsEntry entry = new SimpleEntry((s.getTitle()), new URL(s.getUrl()));
-                entries.add(entry);
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
-        }
-        return entries;
-    }
-*/
-
     public RedditSimpleService(){
         EntryCollectionFactory factory = new EntryCollectionFactory();
         this.collection = (RedditEntryCollection) factory.getEntryCollection("reddit", "simple");
     }
 
-
     @Override
     public List<NewsEntry> getControversialEntries(int numberOfEntries) {
         collection.setLimit(numberOfEntries);
-        return collection.getEntries("controversial");
+        return collection.getEntries("CONTROVERSIAL");
     }
 
     @Override
     public List<NewsEntry> getControversialEntriesByCategory(int numberOfEntries, String category) {
         collection.setLimit(numberOfEntries);
-        return collection.getEntriesByCategory("controversial", category);
+        return collection.getEntriesByCategory("CONTROVERSIAL", category);
     }
 
     @Override
     public List<NewsEntry> getRisingEntries(int numberOfEntries) {
         collection.setLimit(numberOfEntries);
-        return collection.getEntries("rising");
+        return collection.getEntries("RISING");
     }
 
     @Override
     public List<NewsEntry> getRisingEntriesByCategory(int numberOfEntries, String category) {
         collection.setLimit(numberOfEntries);
-        return collection.getEntriesByCategory("rising", category);
+        return collection.getEntriesByCategory("RISING", category);
     }
 
     @Override
     public List<NewsEntry> getHotEntries(int numberOfEntries) {
         collection.setLimit(numberOfEntries);
-        return collection.getEntries("hot");
+        return collection.getEntries("HOT");
     }
 
     @Override
     public List<NewsEntry> getHotEntriesByCategory(int numberOfEntries, String category) {
         collection.setLimit(numberOfEntries);
-        return collection.getEntriesByCategory("hot", category);
+        return collection.getEntriesByCategory("HOT", category);
     }
 
     @Override
     public List<NewsEntry> getTopEntries(int numberOfEntries) {
         collection.setLimit(numberOfEntries);
-        return collection.getEntries("top");
+        return collection.getEntries("TOP");
     }
 
     @Override
     public List<NewsEntry> getTopEntriesByCategory(int numberOfEntries, String category) {
         collection.setLimit(numberOfEntries);
-        return collection.getEntriesByCategory("top", category);
+        return collection.getEntriesByCategory("TOP", category);
     }
 
     @Override
     public List<NewsEntry> getNewEntries(int numberOfEntries) {
         collection.setLimit(numberOfEntries);
-        return collection.getEntries("new");
+        return collection.getEntries("NEW");
     }
 
     @Override
     public List<NewsEntry> getNewEntriesByCategory(int numberOfEntries, String category) {
         collection.setLimit(numberOfEntries);
-        return collection.getEntriesByCategory("new", category);
+        return collection.getEntriesByCategory("NEW", category);
     }
 }
