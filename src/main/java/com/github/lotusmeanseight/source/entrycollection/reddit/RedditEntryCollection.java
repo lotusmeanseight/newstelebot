@@ -1,26 +1,14 @@
 package com.github.lotusmeanseight.source.entrycollection.reddit;
 
-import com.github.lotusmeanseight.entry.NewsEntry;
-import com.github.lotusmeanseight.entry.impl.SimpleEntry;
 import com.github.lotusmeanseight.source.entrycollection.EntryCollection;
 import net.dean.jraw.RedditClient;
 import net.dean.jraw.http.OkHttpNetworkAdapter;
 import net.dean.jraw.http.UserAgent;
-import net.dean.jraw.models.Listing;
-import net.dean.jraw.models.Submission;
-import net.dean.jraw.models.SubredditSort;
 import net.dean.jraw.oauth.Credentials;
 import net.dean.jraw.oauth.OAuthHelper;
-import net.dean.jraw.pagination.DefaultPaginator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public abstract class RedditEntryCollection extends EntryCollection {
