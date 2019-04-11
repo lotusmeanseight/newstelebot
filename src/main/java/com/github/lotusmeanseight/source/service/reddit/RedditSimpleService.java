@@ -2,8 +2,9 @@ package com.github.lotusmeanseight.source.service.reddit;
 
 import com.github.lotusmeanseight.entry.NewsEntry;
 import com.github.lotusmeanseight.source.RedditSource;
-import com.github.lotusmeanseight.source.entrycollection.EntryCollectionFactory;
+import com.github.lotusmeanseight.source.entrycollection.FactoryCreator;
 import com.github.lotusmeanseight.source.entrycollection.reddit.RedditEntryCollection;
+import com.github.lotusmeanseight.source.entrycollection.reddit.RedditFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +15,8 @@ public class RedditSimpleService implements RedditSource {
     private RedditEntryCollection collection;
 
     public RedditSimpleService(){
-        EntryCollectionFactory factory = new EntryCollectionFactory();
-        this.collection = (RedditEntryCollection) factory.getEntryCollection("reddit", "simple");
+        RedditFactory factory = (RedditFactory) FactoryCreator.getFactory("reddit");
+        this.collection = factory.create("simple");
     }
 
     @Override

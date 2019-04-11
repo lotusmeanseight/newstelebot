@@ -1,9 +1,7 @@
 package com.github.lotusmeanseight.service;
 
 import com.github.lotusmeanseight.entry.NewsEntry;
-import com.github.lotusmeanseight.source.entrycollection.EntryCollectionFactory;
 import com.github.lotusmeanseight.source.entrycollection.reddit.RedditEntryCollection;
-import com.github.lotusmeanseight.source.entrycollection.reddit.RedditSimpleEntryCollection;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
