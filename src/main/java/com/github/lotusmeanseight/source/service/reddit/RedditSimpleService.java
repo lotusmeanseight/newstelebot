@@ -5,6 +5,7 @@ import com.github.lotusmeanseight.source.RedditSource;
 import com.github.lotusmeanseight.source.entrycollection.FactoryCreator;
 import com.github.lotusmeanseight.source.entrycollection.reddit.RedditEntryCollection;
 import com.github.lotusmeanseight.source.entrycollection.reddit.RedditFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

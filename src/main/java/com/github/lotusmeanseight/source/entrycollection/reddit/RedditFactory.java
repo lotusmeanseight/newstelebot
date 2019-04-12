@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class RedditFactory implements AbstractFactory<RedditEntryCollection> {
 
     @Autowired
-    RedditSimpleEntryCollection simpleEntryCollection;
+    private RedditSimpleEntryCollection simpleEntryCollection;
 
     @Override
     public RedditEntryCollection create(String entryType) {
